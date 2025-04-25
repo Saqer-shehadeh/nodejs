@@ -13,7 +13,7 @@ const {name,price}=req.body
 const newproduct={id:product.length+1,name,price}
 product.push(newproduct)
 res.status(202).json({
-    msg:"done",
+    msg:"don",
     newproduct
 })
 })
