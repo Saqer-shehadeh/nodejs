@@ -1,15 +1,14 @@
-import * as handlers from './handlers.js'
+import productRouter from "./src/modules/product/product.routs.js";
 
 export function init(express,server){
+
     server.use(express.json())
-
-    server.route("/product")
-    .post(handlers.addproduct)
-    .get(handlers.getproduct)
-
-    server.route("/product/:id")
-    .put(handlers.putproduct)
-    .patch(handlers.patchproduct)
-    .delete(handlers.deleteproduct)
+    server.use((req,res,next)=>{
+        console.log(Date.now());
+        req.ss="ssss"
+        next()
+    })
+   server.use("/product",productRouter)
+    
   
 }
